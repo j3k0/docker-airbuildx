@@ -1,3 +1,4 @@
 FROM jeko/airbuild
-RUN apt-get update && apt-get install -y xvfb netcat-openbsd --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y xserver-xorg-video-dummy netcat-openbsd --no-install-recommends && rm -rf /var/lib/apt/lists/*
 COPY docker-entry.sh /docker-entry.sh
+COPY xorg.conf /xorg.conf
